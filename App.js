@@ -69,7 +69,7 @@ half4 main(float2 fragCoord) {
 }`);
 
 export default function App() {
-  const image = useImage(require("./assets/flowers.jpg"));
+  const image = useImage(require("./assets/insta.png"));
   const { width, height } = useWindowDimensions();
   const x = useSharedValue(width / 2);
   const y = useSharedValue(height / 2);
@@ -102,7 +102,7 @@ export default function App() {
             <Shader source={source} uniforms={uniforms}>
               <ImageShader
                 image={image}
-                fit="cover"
+                fit="fitWidth"
                 rect={{ x: 0, y: 0, width, height }}
               />
             </Shader>
